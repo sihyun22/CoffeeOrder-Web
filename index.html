@@ -24,11 +24,12 @@
       <!-- 헤더 영역 메뉴 바 -->
       <div id="header-wrap">
         <ul id="menu">
-          <li><a href="coffee.html">커피</a>
-          <li><a href="tea.html">티</a>
-          <li><a href="frappe.html">프라페</a>
-          <li><a href="juice.html">주스 & 에이드</a>
-          <li><a href="dessert">디저트</a>
+          <li><a href="#" id="bestTap">주간BEST</a>
+          <li><a href="#" id="coffeeTab">커피</a>
+          <li><a href="#" id="teaTab">티</a>
+          <li><a href="#">프라페</a>
+          <li><a href="#">주스 & 에이드</a>
+          <li><a href="#">디저트</a>
         </ul>
         <!-- 헤더 영역 주문내역(장바구니) 아이콘  -->
         <ul id="cart">
@@ -36,7 +37,7 @@
         </ul>
         <!-- 주문내역 영역 (CSS로 아이콘 클릭시 보이게 설정) -->
         <div class="cart-area">
-          <h2 class="cart-title"><i class='bx bx-cart bx-flip-horizontal' id="cart-title-icon" ></i>주문내역</h2>
+          <h2 class="cart-title"><i class='bx bx-cart bx-flip-horizontal' id="cart-title-icon"></i>주문내역</h2>
           <div class="cart-content">
             <!----------------샘플 카트 메뉴 아이템 주석처리로 안보이게-------------->
             <!-- <div class="cart-box">
@@ -48,16 +49,19 @@
                 <input type="number" value="1" class="cart-quantity">
               </div>
               <!-- remove cart-->
-              <!-- <i class='bx bxs-x-circle cart-remove'></i> 
+            <!-- <i class='bx bxs-x-circle cart-remove'></i> 
             </div>  -->
           </div>
           <!--주문내역 Total 영역 -->
-          <div class="total">
-            <div class="total-title">총 금액</div>
-            <div class="total-price">₩&nbsp0</div>
+          <div class="cart-bottom">
+            <div class="total">
+              <div class="total-title">총 금액</div>
+              <div class="total-price">0&nbsp원</div>
+
+            </div>
+            <!-- 주문내역 Buy button -->
+            <button type="button" class="btn-buy">구매하기</button>
           </div>
-          <!-- 주문내역 Buy button -->
-          <button type="button" class="btn-buy">구매하기</button>
           <!-- 주문내역 Cart close -->
           <i class='bx bx-x' id="close-cart"></i>
         </div>
@@ -66,38 +70,191 @@
   </header>
   <main>
     <!-- 헤더와 메인 경계 영역  -->
+
     <div id="between-area"></div>
     <!-- 메인 메뉴 영역 -->
-    <h1>주간 BEST</h1>
+    <div id="videoArea">
+      <iframe width="1950" height="700"
+        src="https://www.youtube.com/embed/Z5kCosEffaI?autoplay=1&mute=1&loop=10" title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    
     <div id="best-menu-area">
+      <!-- <h1 id="best-menu-header-text">주간 BEST</h1> -->
       <div class="best-menu">
         <img class="best-menu-img" src="images/best1.png" alt="cake1"> <!-- 메뉴 이미지 -->
         <h3 class="product-title">스트로베리 초콜릿 생크림</h3> <!-- 메뉴 이름 -->
-        <p class="product-price">6,200원</p> <!-- 메뉴 가격 -->
+        <p class="product-price">6,200 원</p> <!-- 메뉴 가격 -->
         <i class='bx bxs-plus-square bx-md add-cart' id="add-cart"></i> <!-- 메뉴 장바구니 추가 아이콘 -->
       </div>
       <div class="best-menu">
         <img class="best-menu-img" src="images/best2.png" alt="cake1">
         <h3 class="product-title">밀키베리무스</h3>
-        <p class="product-price">6,000원</p>
-        <i class='bx bxs-plus-square bx-md add-cart'id="add-cart"></i>
+        <p class="product-price">6,000 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart' id="add-cart"></i>
       </div>
       <div class="best-menu">
         <img class="best-menu-img" src="images/best3.png" alt="cake1">
         <h3 class="product-title">로얄 밀크티 쉐이크</h3>
-        <p class="product-price">5,900원</p>
+        <p class="product-price">5,900 원</p>
         <i class='bx bxs-plus-square bx-md add-cart'></i>
 
       </div>
       <div class="best-menu">
         <img class="best-menu-img" src="images/best4.png" alt="cake1">
         <h3 class="product-title">스트로베리 라떼</h3>
-        <p class="product-price">5,500원</p>
+        <p class="product-price">5,500 원</p>
         <i class='bx bxs-plus-square bx-md add-cart'></i>
 
       </div>
-      
+
     </div>
+    <!-- 커피 메뉴 영역 -->
+     <div id="coffee-menu-container">
+    <div id="coffee-menu-area">
+      <!-- <h1 id="coffee-menu-header-text">커피</h1> -->
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/coffee1.png" alt="cake1">
+        <h3 class="product-title">오렌지 블라썸 라떼</h3>
+        <p class="product-price">5,100 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/coffee2.png" alt="cake1">
+        <h3 class="product-title">투썸 시그니처 라떼</h3>
+        <p class="product-price">4,600 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/coffee3.png" alt="cake1">
+        <h3 class="product-title">콜드브루 토닉</h3>
+        <p class="product-price">6,000 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/coffee4.png" alt="cake1">
+        <h3 class="product-title">니트로 콜드브루 라떼</h3>
+        <p class="product-price">5,300 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/coffee5.png" alt="cake1">
+        <h3 class="product-title">니트로 콜드브루</h3>
+        <p class="product-price">6,300 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/coffee6.png" alt="cake1">
+        <h3 class="product-title">티라미수 라떼</h3>
+        <p class="product-price">5,800 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/coffee7.png" alt="cake1">
+        <h3 class="product-title">플로팅 라떼</h3>
+        <p class="product-price">6,000 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/coffee8.png" alt="cake1">
+        <h3 class="product-title">콜드브루 라떼</h3>
+        <p class="product-price">5,000 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/coffee9.png" alt="cake1">
+        <h3 class="product-title">콜드브루</h3>
+        <p class="product-price">4,500 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/coffee10.png" alt="cake1">
+        <h3 class="product-title">롱블랙</h3>
+        <p class="product-price">4,100 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/coffee11.png" alt="cake1">
+        <h3 class="product-title">아이스 롱블랙</h3>
+        <p class="product-price">4,100 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/coffee12.png" alt="cake1">
+        <h3 class="product-title">아이스 숏라떼</h3>
+        <p class="product-price">4,600 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+    </div>
+  </div>
+    <!-- 티 메뉴 영역 -->
+     <div id="tea-menu-container">
+    <div id="tea-menu-area">
+      <!-- <h1 id="tea-menu-header-text">티 베리에이션</h1> -->
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/tea1.png" alt="cake1">
+        <h3 class="product-title">리프레싱 스트로베리 아이스티</h3>
+        <p class="product-price">5,800 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/tea2.png" alt="cake1">
+        <h3 class="product-title">루이보스 크림티</h3>
+        <p class="product-price">5,800 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/tea3.png" alt="cake1">
+        <h3 class="product-title">라즈베리 아이스티</h3>
+        <p class="product-price">5,800 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/tea4.png" alt="cake1">
+        <h3 class="product-title">허니레몬 아이스티</h3>
+        <p class="product-price">5,800 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/tea7.png" alt="cake1">
+        <h3 class="product-title">오렌지 자몽티</h3>
+        <p class="product-price">5,500 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/tea8.png" alt="cake1">
+        <h3 class="product-title">고구마 라떼</h3>
+        <p class="product-price">5,000 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/tea9.png" alt="cake1">
+        <h3 class="product-title">유자 레몬티</h3>
+        <p class="product-price">5,500 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/tea10.png" alt="cake1">
+        <h3 class="product-title">로얄 밀크티</h3>
+        <p class="product-price">5,500 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/tea11.png" alt="cake1">
+        <h3 class="product-title">버블 밀크티</h3>
+        <p class="product-price">6,000 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+      <div class="best-menu">
+        <img class="best-menu-img" src="images/tea12.png" alt="cake1">
+        <h3 class="product-title">버블 그린티 라떼</h3>
+        <p class="product-price">4,100 원</p>
+        <i class='bx bxs-plus-square bx-md add-cart'></i>
+      </div>
+    </div>
+  </div>
   </main>
   <script src="main.js"></script>
 </body>
