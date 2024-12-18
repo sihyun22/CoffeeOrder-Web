@@ -12,35 +12,15 @@
   list-style: none;
   text-decoration: none;
 }
-
+/* 바디 영역 높이  */
+body{
+    height: auto;
+}
+/* Header */
 a{
   color: #696969;
   cursor: pointer;
 }
-
-/* #videoArea {
-  position: relative;
-  height: 0;
-  padding-bottom: 56.25%;
-  margin: 1px auto;
-}
-
-#videoArea iframe {
-  position: absolute;
-  top:-5%;
-} */
-/* 홈페이지 메인 대표 사진 */
-#main-container-img{
-  position: absolute;
-  transition: 0.6s;
-  top:10%;
-  /* z-index: 10; */
-}
-#main-container-img.active{
-  left:-200%;
-
-}
-/* Header */
 #header {
   padding: 1rem;
   position: fixed;
@@ -58,7 +38,6 @@ a{
   justify-content: center;
   line-height: 50px;
 }
-
 /* 홈페이지 메인 로고*/
 #img-area{
   cursor: pointer;
@@ -71,6 +50,40 @@ a{
   width: 350px;
   cursor: pointer;
 }
+/* 비디오 영역 */
+#videoArea.active{
+  display: none;  
+}
+#videoArea{
+    position: relative;
+    width: 100%;
+    height: 52vw;
+    overflow: hidden;
+}
+#video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+/* 이벤트 영역 사진 */
+#event-area{
+    display: flex;
+    flex-direction: column;
+}
+#event-area.active{
+    display: none;
+}
+#event-img1{
+    margin: 10px auto;
+    padding: 10px;
+}
+#event-img2{
+    margin: 10px auto;
+}
 /* 상단 메뉴 리스트 */
 #menu li{
   display: inline;
@@ -78,24 +91,20 @@ a{
   font-size: 1.2rem;
   font-weight: 400;
 }
-
 #menu a:hover{
   padding: 2px;
   font-size: 1.3em;
   transition: 0.5s;
-  color: goldenrod;
+  color: rgb(218, 32, 32);
 }
 /* 주문내역  */
-
 /* 주문내역 영역 보이게, 안보이게 설정 */
-
 .cart-area{
   position: fixed;
   top:0;
   right: -100%;
   width: 360px;
   height: 1000px;
-  /* min-height: 100vh; */
   padding: 20px;
   background: #fff;
   box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
@@ -113,18 +122,15 @@ a{
   cursor: pointer;
   height: inherit;
   line-height: 65px;
-  /* border: 1px solid blue; */
   padding-left: 60px;
   color: #696969;
   z-index: 100;
 }
-
 #cart:hover{
   padding: 1px;
   transition: 0.5s;
-  color: goldenrod;
+  color: rgb(218, 32, 32);
 }
-
 /* 주문내역  영역의 아이콘  */
 #cart-title-icon{
   position: absolute;
@@ -143,7 +149,7 @@ a{
   border-bottom: #ccc 1px solid;
   color:#3f3f3f;
 }
-
+/* 주문내역 카트 박스 */
 .cart-box{
   display: grid;
   grid-template-columns: 26% 56% 18%;
@@ -153,6 +159,7 @@ a{
   margin-bottom: 1.5rem;
   border-bottom: #ccc solid 1px;
 }
+/* 주문내역 카트의 이미지 */
 .cart-img{
   width: 100px;
   height: 100px;
@@ -216,19 +223,19 @@ a{
 
 }
 .total-title{
+margin-left: 50px;
   font-size: 1rem;
   font-weight: 600;
 }
 .total-price{
-  font-weight: 600;
+color: rgb(218, 32, 32);
+font-size: 1.3rem;
+  font-weight: 800;
   padding-left: 3rem;
   margin-left: 1rem;
 }
 /* 주문 내역 구매 버튼 */
 .btn-buy{
-  /* position: fixed;
-  bottom:10px;
-  right:130px; */
   background-color: #a7a7a7;
   color: white;
   border-radius: 5%;
@@ -237,9 +244,10 @@ a{
   margin: 1.5rem auto 0 auto;
   padding: 12px 20px;
   border: none;
+  cursor: pointer;
 }
 .btn-buy:hover{
-  background-color: #3f3f3f;
+  background-color: #208f6e;
   padding: 14px 22px;
 }
 /* 주문 내역 닫기 버튼 */
@@ -262,50 +270,31 @@ a{
 #between-area{
   margin: 150px;
 }
-
 /* Best 제품 메뉴 */
 main{
   place-items: center;
+  height: 100vh;
 }
-
-#videoArea.active{
-  display: none;  
-}
-
-/* 메뉴 영역 */
+/* 케이크 영역 */
 #best-menu-area{
-  border: 1px solid black;
-  width: 1500px;
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 20px;
-  padding: 3em;
-  z-index: 1;
-  transition: 0.6s;
-  position: absolute;
-  left:-150%;
+    position: absolute;
+    left:-100%;
+    width: 1500px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    padding: 1em;
 }
-/* #best-menu-area.active{
-  position: absolute;
-  left: -100%;
-  transition: 0.6s;
-} */
 #best-menu-area.active2{
   position: absolute;
   left: 12%;
+  left:0%;
   transition: 0.6s;
-  & >h1{
-      font-size: 2em;
-      font-weight: 300;
-      margin: 30px;
-      position: absolute;
-      top:-27.95%;
-  }
 }
-/* 티 메뉴 필드 영역 */
+/* 티 메뉴 영역 */
 #tea-menu-area{
   position: absolute;
-  left:-100%;
+  left:-120%;
   width: 1500px;
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -314,23 +303,22 @@ main{
 }
 #tea-menu-area.active3{
   position: absolute;
-  top:15%;
-  left:8%;
+  top:17%;
+  left:0%;
   transition: 0.6s;
-  /* grid-template-columns: repeat(3,1fr); */
 }
 #tea-menu-container{
   display: flex;
   min-height: 100vh;
 }
-/* 커피 메뉴 필드 영역역 */
+/* 커피 메뉴 영역 */
 #coffee-menu-container{
   display: flex;
   min-height: 100vh;
 }
 #coffee-menu-area{
   position: absolute;
-  left:-100%;
+  left:-120%;
   width: 1500px;
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -338,29 +326,20 @@ main{
   padding: 1em;
 }
 #coffee-menu-area.active{
-  border:1px solid black;
-  left:11%;
-  /* z-index: 10; */
-  transition: 0.6s;
+    position: absolute;
+    left:0%;
+    transition: 0.6s;
 }
-/* 메뉴 마우스 오버  */
-.best-menu:hover{
-  color: goldenrod;
-  padding: 10px;
-  border: 2px solid goldenrod;
-  transition: 0.4s;
-  & .best-menu-img{
-    background-color: #f0f0f0;
-  }
-  & .add-cart{
-    padding: 1px;
-    color: goldenrod;
-  }
-}
+/* 메뉴 카드  */
 .best-menu{
   position: relative;
   cursor: pointer;
   place-items: center;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
   & h3{
     font-weight: 500;
   }
@@ -369,6 +348,7 @@ main{
     font-size: 1rem;
     font-weight: 300;
     color:#6e6e6e;
+    margin-bottom: 10px;
   }
 }
 .best-menu-img{
@@ -382,98 +362,195 @@ main{
   right:3px;
   color: #696969;
 }
-
-/* 미디어 쿼리 반응형 */
-@media screen and (max-width:1440px)  {
-  #header-wrap{
-    border-bottom: 1px solid #ccc;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    line-height: 50px;
-    padding-right: 150px;
-  }
-  #menu li{
-    cursor: pointer;
-    display: inline;
-    padding-left: 30px;
-    font-size: 1.1rem;
-    font-weight: 400;
-  }
-  #menu a{
-    font-size: 1em;
-  }  
+/* 메뉴 마우스 오버  */
+.best-menu:hover{
+  font-weight: 800;
+color: #20888f;
+padding: 10px;
+border: 2px solid rgb(218, 32, 32);
+transition: 0.4s;
+& .best-menu-img{
+  background-color: #f0f0f0;
+}
+& .add-cart{
+  padding: 1px;
+  font-size: 2rem;
+  color: rgb(218, 32, 32);
+}
+& p{
+  font-weight: 400;
+  color:rgb(218, 32, 32);
+}
 }
 
-
-@media screen and (max-width:1200px) {
+/* 미디어 쿼리 작성 */
+/* 1650px ~ 1950px */
+@media screen and (min-width:1650px) and (max-width:1950px) {
+    #menu li{
+      padding-right: 30px;
+    }
+    #best-menu-area{
+      grid-template-columns:repeat(4,1fr);
+      margin-left: 50px;
+      width: 1800px;
+    }
+    #coffee-menu-area{
+      grid-template-columns: repeat(4,1fr);
+      width: 1800px;
+      margin-left: 50px;
+    }
+    #tea-menu-area{
+      grid-template-columns: repeat(4,1fr);
+      width: 1800px;
+      margin-left: 50px;
+      margin-top: 30px;
+    }
+}
+/* 1380px ~ 1649px */
+@media screen and (min-width:1380px) and (max-width:1649px) {
   #header-wrap{
-    border-bottom: 1px solid #ccc;
-    position: relative;
-    display: flex;
-    flex-direction: row;
     justify-content: flex-end;
-    line-height: 50px;
     padding-right: 150px;
   }
-  #menu li{
-    cursor: pointer;
-    display: inline;
-    padding-left: 20px;
-    font-size: 1rem;
-    font-weight: 400;
+  #menu{
+    margin-right: 20px;
   }
-  #menu a{
-    font-size: 1em;
-    
+  #menu li{
+    padding-left: 80px;
   }
   #best-menu-area{
-    grid-template-columns: repeat(2,1fr);
-    width: 800px;
+    margin-left: 120px;
+    width: 1400px;
   }
   #coffee-menu-area{
-    grid-template-columns: repeat(2,1fr);
-    width: 800px;
-    border: 1px solid black;
+    width: 1400px;
+    margin-left: 120px;
   }
   #tea-menu-area{
-    grid-template-columns: repeat(2,1fr);
-    width: 800px;
+    width: 1400px;
+    margin-left: 120px;
+    margin-top: 30px;
   }
 }
-
-/* 수정 중 */
-@media screen and (max-width:906px){
+/* 1180px ~ 1379px */
+@media screen and (min-width:1180px) and (max-width:1379px) {
   #header-wrap{
-    border-bottom: none;
+    margin-top: 40px;
+    border: none;
+    background-color: #fff;
+    height: 80px;
+    width: 1380px;
   }
   #img-area{
-    cursor: pointer;
     position: relative;
   }
   #img1{
-    width: 120px;
-    content: url(images/pngegg.png);
+    width: 600px;
     position: absolute;
-    top:-40px;
-    left: -20px;
+    top:-30px;
+    left: 400px;
   }
   #menu li{
-    cursor: pointer;
-    display: inline;
-    padding-left: 18px;
-    font-size: 1.3rem;
-    font-weight: 400;
+    padding-left: 130px;
+    font-size: 1.1rem;
+    width: 1500px;
   }
   #menu {
     margin-top: 20px;
+    position: absolute;
+    background-color: #fff;
+    width: 1230px;
+    left:4%;
+    border-top: #ccc 2px solid;
+    border-bottom: #ccc 2px double;
   }
   #img-area{
     left: 1em;
   }
   #cart{
-    top: 20px;
-    right: 50px;
+    top: -40px;
+    right: 140px;
+  }
+  #best-menu-area{
+    margin-top: 40px;
+    grid-template-columns: repeat(2,1fr);
+    width: 1000px;
+    margin-left: 160px;
+  }
+  #coffee-menu-area{
+    margin-top: 40px;
+    grid-template-columns: repeat(2,1fr);
+    width: 1000px;
+    margin-left: 160px;
+  }
+  #tea-menu-area{
+    margin-top: 50px;
+    grid-template-columns: repeat(2,1fr);
+    width: 1000px;
+    margin-left: 180px;
+  }
+}
+/* 800px ~ 1179px */
+@media screen and (min-width:800px) and (max-width:1179px)  {
+  #header-wrap{
+    margin-top: 40px;
+    background-color: #fff;
+    height: 70px;
+    border: none;
+  }
+  #header{
+    height:auto;
+    position: fixed;
+    background-color: #fff;
+  }
+  #img-area{
+    position: relative;
+  }
+  #img1{
+    width: 400px;
+    position: absolute;
+    top:-20px;
+    left: 250px;
+  }
+  #menu li{
+    padding-left: 100px;
+    font-size: 1.1rem;
+  }
+  #menu {
+    margin-top: 20px;
+    position: absolute;
+    background-color: #fff;
+    width: 1000px;
+    left:4%;
+    border-top: #ccc 2px solid;
+    border-bottom: #ccc 2px double;
+  }
+  #cart{
+    top: -40px;
+    right: 90px;
+  }
+  #event-img1{
+    width: 100%;
+  }
+  #event-img2{
+    width: 100%;
+  }
+  #best-menu-area{
+    grid-template-columns:repeat(2,1fr);
+    width: 800px;
+    margin-left: 160px;
+    gap:40px;
+  }
+  #coffee-menu-area{
+    grid-template-columns:repeat(2,1fr);
+    width: 800px;
+    gap:40px;
+    margin-left: 150px;
+  }
+  #tea-menu-area{
+    grid-template-columns:repeat(2,1fr);
+    width: 800px;
+    gap:40px;
+    margin-left: 150px;
   }
 }

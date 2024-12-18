@@ -4,27 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- title icon 연결 -->
+  <!-- 타이틀 아이콘콘 연결 -->
   <link rel="shortcut icon" type="image/x-icon" href="images/pngegg.png">
   <title>TWOSOME PLACE Coffee & Dessert</title>
-  <!-- css 파일 연결 -->
+  <!-- CSS 파일 연결 -->
   <link rel="stylesheet" href="style.css">
   <!-- boxicons 연결 -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-  <!-- 헤더 영역 -->
+  <!-- 헤더 필드 -->
   <header>
     <div id="header">
-      <!-- 헤더 영역 로고 -->
+      <!-- 헤더 필드 로고 이미지 -->
       <a href="index.html" id="img-area">
         <img id="img1" src="images/logo2.png" alt="" width="200px">
       </a>
-      <!-- 헤더 영역 메뉴 바 -->
+      <!-- 헤더 필드 메뉴 바 -->
       <div id="header-wrap">
         <ul id="menu">
-          <li><a href="#" id="bestTap">주간BEST</a>
+          <li><a href="#" id="bestTap">케이크</a>
           <li><a href="#" id="coffeeTab">커피</a>
           <li><a href="#" id="teaTab">티</a>
           <li><a href="#">프라페</a>
@@ -35,7 +35,7 @@
         <ul id="cart">
           <li><i class='bx bxs-shopping-bags bx-md' id="cart-icon"></i></li>
         </ul>
-        <!-- 주문내역 영역 (CSS로 아이콘 클릭시 보이게 설정) -->
+        <!-- 주문내역 필드 -->
         <div class="cart-area">
           <h2 class="cart-title"><i class='bx bx-cart bx-flip-horizontal' id="cart-title-icon"></i>주문내역</h2>
           <div class="cart-content">
@@ -52,37 +52,41 @@
             <!-- <i class='bx bxs-x-circle cart-remove'></i> 
             </div>  -->
           </div>
-          <!--주문내역 Total 영역 -->
+          <!--주문내역 토탈 필드 -->
           <div class="cart-bottom">
             <div class="total">
               <div class="total-title">총 금액</div>
               <div class="total-price">0&nbsp원</div>
-
             </div>
-            <!-- 주문내역 Buy button -->
+            <!-- 주문내역 구매 버튼 -->
             <button type="button" class="btn-buy">구매하기</button>
           </div>
-          <!-- 주문내역 Cart close -->
+          <!-- 주문내역 닫기 버튼 -->
           <i class='bx bx-x' id="close-cart"></i>
         </div>
       </div>
     </div>
   </header>
+  <!-- 헤더 필드 끝 / 메인 필드 시작 -->
   <main>
-    <!-- 헤더와 메인 경계 영역  -->
-
+    <!-- 헤더와 메인 경계 필드  -->
     <div id="between-area"></div>
-    <!-- 메인 메뉴 영역 -->
+    <!-- 메인 홈페이지 필드 -->
+     <!-- 메인 홈페이지 영상 필드 -->
     <div id="videoArea">
-      <iframe width="1950" height="700"
+      <iframe id="video" width="1950" height="700"
         src="https://www.youtube.com/embed/Z5kCosEffaI?autoplay=1&mute=1&loop=10" title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
-    
+    <!-- 메인 홈페이지 이벤트 필드 -->
+    <div id="event-area">
+      <img id="event-img1" src="images/xmas2.jpg" alt="">
+      <img id="event-img2" src="images/xmas3.jpg" alt="">
+  </div>
+    <!-- 케이크 메뉴 필드 -->
     <div id="best-menu-area">
-      <!-- <h1 id="best-menu-header-text">주간 BEST</h1> -->
       <div class="best-menu">
         <img class="best-menu-img" src="images/best1.png" alt="cake1"> <!-- 메뉴 이미지 -->
         <h3 class="product-title">스트로베리 초콜릿 생크림</h3> <!-- 메뉴 이름 -->
@@ -100,21 +104,17 @@
         <h3 class="product-title">로얄 밀크티 쉐이크</h3>
         <p class="product-price">5,900 원</p>
         <i class='bx bxs-plus-square bx-md add-cart'></i>
-
       </div>
       <div class="best-menu">
         <img class="best-menu-img" src="images/best4.png" alt="cake1">
         <h3 class="product-title">스트로베리 라떼</h3>
         <p class="product-price">5,500 원</p>
         <i class='bx bxs-plus-square bx-md add-cart'></i>
-
       </div>
-
     </div>
-    <!-- 커피 메뉴 영역 -->
+    <!-- 커피 메뉴 필드 -->
      <div id="coffee-menu-container">
     <div id="coffee-menu-area">
-      <!-- <h1 id="coffee-menu-header-text">커피</h1> -->
       <div class="best-menu">
         <img class="best-menu-img" src="images/coffee1.png" alt="cake1">
         <h3 class="product-title">오렌지 블라썸 라떼</h3>
@@ -189,10 +189,9 @@
       </div>
     </div>
   </div>
-    <!-- 티 메뉴 영역 -->
+    <!-- 티 메뉴 필드 -->
      <div id="tea-menu-container">
     <div id="tea-menu-area">
-      <!-- <h1 id="tea-menu-header-text">티 베리에이션</h1> -->
       <div class="best-menu">
         <img class="best-menu-img" src="images/tea1.png" alt="cake1">
         <h3 class="product-title">리프레싱 스트로베리 아이스티</h3>
@@ -256,6 +255,9 @@
     </div>
   </div>
   </main>
+  <!-- 메인 필드 끝 -->
+
+  <!-- 자바 스크립트 연결 -->
   <script src="main.js"></script>
 </body>
 
