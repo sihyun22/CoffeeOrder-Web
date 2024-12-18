@@ -127,6 +127,12 @@ function addProductToCart(title, price, img) {
     }
 
   }
+  let modalShopBox = document.createElement('div');
+  modalShopBox.classList.add('modal-box');
+
+  let modalItems = document.getElementsByClassName('content')[0];
+  let modalItemsNames = document.getElementById('modal-product-title');
+
   // 선택한 메뉴의 데이터를 백틱 리터롤로 innerHTML
   let cartBoxContent = `
   <img src="${img}" alt="" class="cart-img">
@@ -138,8 +144,43 @@ function addProductToCart(title, price, img) {
     <!-- remove cart -->
     <i class='bx bxs-x-circle cart-remove'></i>
   `;
+  let modalBoxContent = `
+            <img id="modal-img" src="${img}" alt="">
+            <div id="modal-product-title">${title}</div>
+            <input class="modal-cart-quantity" type="number" value="1">
+            <div id="modal-cart-price">${price}</div>
+          <i id="modal-box-remove" class='bx bxs-x-circle modal-box-remove'></i>
+
+  `;
+  modalShopBox.innerHTML = modalBoxContent;
   cartShopBox.innerHTML = cartBoxContent;
+  modalItems.append(modalShopBox);
+
+  modalShopBox.getElementsByClassName('modal-box-remove')[0].addEventListener('click', removeCartItem);
+  modalShopBox.getElementsByClassName('modal-cart-quantity')[0].addEventListener('change', quantityChanged);
   cartItems.append(cartShopBox);
   cartShopBox.getElementsByClassName('cart-remove')[0].addEventListener('click', removeCartItem);
   cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change', quantityChanged);
 }
+
+
+const modal=document.getElementById("modal")
+const modalClose=document.querySelector(".close-area");
+function modalOn(){
+    modal.style.display="flex"
+}
+function isModalOn(){
+    return modal.style.display === "flex"
+}
+function modalOff() {
+    modal.style.display = "none"
+}
+const btnModal = document.querySelector(".btn-buy")
+
+btnModal.addEventListener("click", e => {
+  modalOn()
+})
+modalClose.addEventListener("click", e =>{
+  modalOff();
+})
+
